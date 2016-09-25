@@ -1,6 +1,7 @@
 package com.example.android.sunshine.app.utils;
 
 import junit.framework.Assert;
+
 import java.util.concurrent.Callable;
 
 /**
