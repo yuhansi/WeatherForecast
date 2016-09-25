@@ -20,9 +20,7 @@ import java.util.Set;
  */
 
 /*
-    Students: These are functions and some test data to make it easier to test your database and
-    Content Provider.  Note that you'll want your WeatherContract class to exactly match the one
-    in our solution to use these as-given.
+ * These are functions and some test data to make it easier to test the database and Content Provider
  */
 public class TestUtilities extends AndroidTestCase {
     static final String TEST_LOCATION = "99705";
@@ -48,7 +46,7 @@ public class TestUtilities extends AndroidTestCase {
     }
 
     /*
-        Students: Use this to create some default weather values for your database tests.
+     * Use this to create some default weather values for the database tests.
      */
     static ContentValues createWeatherValues(long locationRowId) {
         ContentValues weatherValues = new ContentValues();
@@ -93,11 +91,11 @@ public class TestUtilities extends AndroidTestCase {
     }
 
     /*
-        Students: The functions we provide inside of TestProvider use this utility class to test
-        the ContentObserver callbacks using the PollingCheck class that we grabbed from the Android
-        CTS tests.
-        Note that this only tests that the onChange function is called; it does not test that the
-        correct Uri is returned.
+     * The functions inside of TestProvider use this utility class to test
+     * the ContentObserver callbacks using the PollingCheck class that was grabbed from the Android
+     * CTS tests
+     * This only tests that the onChange function is called; it does not test that the
+     * correct Uri is returned
      */
     static class TestContentObserver extends ContentObserver {
         final HandlerThread mHT;

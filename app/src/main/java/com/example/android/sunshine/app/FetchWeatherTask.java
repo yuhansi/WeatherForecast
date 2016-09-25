@@ -102,9 +102,9 @@ public class FetchWeatherTask extends AsyncTask<String, Void, String[]> {
     }
 
     /*
-        Students: This code will allow the FetchWeatherTask to continue to return the strings that
-        the UX expects so that we can continue to test the application even once we begin using
-        the database.
+     * This code will allow the FetchWeatherTask to continue to return the strings that
+     * the UX expects so that the application can be tested even after the database is start
+     * being used
      */
     String[] convertContentValuesToUXFormat(Vector<ContentValues> cvv) {
         // return strings to keep UI functional for now
@@ -262,7 +262,7 @@ public class FetchWeatherTask extends AsyncTask<String, Void, String[]> {
             Uri weatherForLocationUri = WeatherEntry.buildWeatherLocationWithStartDate(
                     locationSetting, System.currentTimeMillis());
 
-            // Students: Uncomment the next lines to display what what you stored in the bulkInsert
+            // Display what what is stored in the bulkInsert
 
 //            Cursor cur = mContext.getContentResolver().query(weatherForLocationUri,
 //                    null, null, null, sortOrder);

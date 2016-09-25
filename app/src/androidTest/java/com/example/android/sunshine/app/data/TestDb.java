@@ -28,6 +28,9 @@ public class TestDb extends AndroidTestCase {
         deleteTheDatabase();
     }
 
+    /**
+     * This only tests that the Location table has the correct columns
+     */
     public void testCreateDb() throws Throwable {
         // build a HashSet of all of the table names we wish to look for
         // Note that there will be another table in the DB that stores the
@@ -85,13 +88,19 @@ public class TestDb extends AndroidTestCase {
         db.close();
     }
 
+    /**
+     * This tests that insertion and query can be done to the location database
+     */
     public void testLocationTable() {
         insertLocation();
     }
 
+    /**
+     * This tests that insertion and query can be done to the weather database
+     */
     public void testWeatherTable() {
-        // First insert the location, and then use the locationRowId to insert
-        // the weather.
+
+        // First insert the location, and then use the locationRowId to insert the weather
         long locationRowId = insertLocation();
 
         // Make sure it is a valid row ID
@@ -138,6 +147,9 @@ public class TestDb extends AndroidTestCase {
         db.close();
     }
 
+    /**
+     * This is the helper method for testLocationTable and testWeatherTable
+     */
     public long insertLocation() {
 
         // Get reference to writable database

@@ -12,23 +12,15 @@ import com.example.android.sunshine.app.data.WeatherContract.WeatherEntry;
  * Created by hanssi on 9/25/16.
  */
 
-/*
-    Note: This is not a complete set of tests of the Sunshine ContentProvider, but it does test
-    that at least the basic functionality has been implemented correctly.
-    Students: Uncomment the tests in this class as you implement the functionality in your
-    ContentProvider to make sure that you've implemented things reasonably correctly.
- */
 public class TestProvider extends AndroidTestCase {
 
     public static final String LOG_TAG = TestProvider.class.getSimpleName();
 
     /*
-       This helper function deletes all records from both database tables using the ContentProvider.
-       It also queries the ContentProvider to make sure that the database has been successfully
-       deleted, so it cannot be used until the Query and Delete functions have been written
-       in the ContentProvider.
-       Students: Replace the calls to deleteAllRecordsFromDB with this one after you have written
-       the delete functionality in the ContentProvider.
+     * This helper function deletes all records from both database tables using the ContentProvider
+     * It also queries the ContentProvider to make sure that the database has been successfully
+       deleted
+     * So it cannot be used until the Query and Delete functions have been written in the ContentProvider
      */
     public void deleteAllRecordsFromProvider() {
         mContext.getContentResolver().delete(
@@ -64,9 +56,10 @@ public class TestProvider extends AndroidTestCase {
     }
 
     /*
-       This helper function deletes all records from both database tables using the database
-       functions only.  This is designed to be used to reset the state of the database until the
-       delete functionality is available in the ContentProvider.
+     * This helper function deletes all records from both database tables using the database
+     * functions only
+     * This is designed to be used to reset the state of the database until the
+     * delete functionality is available in the ContentProvider
      */
     public void deleteAllRecordsFromDB() {
         WeatherDbHelper dbHelper = new WeatherDbHelper(mContext);
@@ -77,10 +70,6 @@ public class TestProvider extends AndroidTestCase {
         db.close();
     }
 
-    /*
-        Student: Refactor this function to use the deleteAllRecordsFromProvider functionality once
-        you have implemented delete functionality there.
-     */
     public void deleteAllRecords() {
         deleteAllRecordsFromDB();
     }
@@ -94,8 +83,7 @@ public class TestProvider extends AndroidTestCase {
     }
 
     /*
-        This test checks to make sure that the content provider is registered correctly.
-        Students: Uncomment this test to make sure you've correctly registered the WeatherProvider.
+     * This test checks to make sure that the content provider is registered correctly
      */
 //    public void testProviderRegistry() {
 //        PackageManager pm = mContext.getPackageManager();
@@ -121,11 +109,9 @@ public class TestProvider extends AndroidTestCase {
 //    }
 
     /*
-            This test doesn't touch the database.  It verifies that the ContentProvider returns
-            the correct type for each type of URI that it can handle.
-            Students: Uncomment this test to verify that your implementation of GetType is
-            functioning correctly.
-         */
+     * This test doesn't touch the database.
+     * It verifies that the ContentProvider returns the correct type for each type of URI that it can handle
+     */
 //    public void testGetType() {
 //        // content://com.example.android.sunshine.app/weather/
 //        String type = mContext.getContentResolver().getType(WeatherEntry.CONTENT_URI);
@@ -158,9 +144,8 @@ public class TestProvider extends AndroidTestCase {
 
 
     /*
-        This test uses the database directly to insert and then uses the ContentProvider to
-        read out the data.  Uncomment this test to see if the basic weather query functionality
-        given in the ContentProvider is working correctly.
+     * This test uses the database directly to insert and then uses the ContentProvider to
+     * read out the data
      */
 //    public void testBasicWeatherQuery() {
 //        // insert our test records into the database
@@ -192,9 +177,8 @@ public class TestProvider extends AndroidTestCase {
 //    }
 
     /*
-        This test uses the database directly to insert and then uses the ContentProvider to
-        read out the data.  Uncomment this test to see if your location queries are
-        performing correctly.
+     * This test uses the database directly to insert and then uses the ContentProvider to
+     * read out the data
      */
 //    public void testBasicLocationQueries() {
 //        // insert our test records into the database
@@ -225,8 +209,7 @@ public class TestProvider extends AndroidTestCase {
 //    }
 
     /*
-        This test uses the provider to insert and then update the data. Uncomment this test to
-        see if your update location is functioning correctly.
+     * This test uses the provider to insert and then update the data
      */
 //    public void testUpdateLocation() {
 //        // Create a new map of values, where column names are the keys
@@ -283,8 +266,7 @@ public class TestProvider extends AndroidTestCase {
 
     // Make sure we can still delete after adding/updating stuff
     //
-    // Student: Uncomment this test after you have completed writing the insert functionality
-    // in your provider.  It relies on insertions with testInsertReadProvider, so insert and
+    // This test relies on insertions with testInsertReadProvider, so insert and
     // query functionality must also be complete before this test can be used.
 //    public void testInsertReadProvider() {
 //        ContentValues testValues = TestUtilities.createNorthPoleLocationValues();
@@ -389,8 +371,7 @@ public class TestProvider extends AndroidTestCase {
 
     // Make sure we can still delete after adding/updating stuff
     //
-    // Student: Uncomment this test after you have completed writing the delete functionality
-    // in your provider.  It relies on insertions with testInsertReadProvider, so insert and
+    // This test relies on insertions with testInsertReadProvider, so insert and
     // query functionality must also be complete before this test can be used.
 //    public void testDeleteRecords() {
 //        testInsertReadProvider();
@@ -439,10 +420,9 @@ public class TestProvider extends AndroidTestCase {
         return returnContentValues;
     }
 
-    // Student: Uncomment this test after you have completed writing the BulkInsert functionality
-    // in your provider.  Note that this test will work with the built-in (default) provider
-    // implementation, which just inserts records one-at-a-time, so really do implement the
-    // BulkInsert ContentProvider function.
+    // This test will work with the built-in (default) provider implementation,
+    // which just inserts records one-at-a-time, so really do implement the
+    // BulkInsert ContentProvider function
 //    public void testBulkInsert() {
 //        // first, let's create a location value
 //        ContentValues testValues = TestUtilities.createNorthPoleLocationValues();

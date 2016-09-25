@@ -13,9 +13,8 @@ public class TestFetchWeatherTask extends AndroidTestCase{
     static final double ADD_LOCATION_LON = -119.714167;
 
     /*
-        Students: uncomment testAddLocation after you have written the AddLocation function.
-        This test will only run on API level 11 and higher because of a requirement in the
-        content provider.
+     * This test will only run on API level 11 and higher because of a requirement in the
+     * content provider.
      */
 //    @TargetApi(11)
 //    public void testAddLocation() {
